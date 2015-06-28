@@ -32,11 +32,12 @@
     <!-- build:js scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/configuration.js"></script>
+    <script src="scripts/controllers.js"></script>
     <!-- endbuild -->
 </head>
 
 <body ng-app="starter">
-    <ion-pane>
+    <ion-pane ng-controller="BarcodeCtrl">
         <div class="bar bar-header bar-stable">
             <h1 class="title">Stay High</h1>
         </div>
@@ -44,10 +45,14 @@
             <h2 class="title">Barcode Reader</h2>
         </div>
         <ion-content class="has-subheader aligner">
-            <img src="http://www.babelio.com/couv/CVT_Arree-sur-image_2119.jpeg" />
+            <div class="row">
+                <div class="col">
+                    Barcode is: {{barcodeText}}
+                </div>
+            </div>
         </ion-content>
         <div class="bar bar-footer aligner">
-            <button class="button button-large">Scan</button>
+            <button class="button button-large" ng-click="scanBarcode()">Scan</button>
         </div>
     </ion-pane>
 </body>

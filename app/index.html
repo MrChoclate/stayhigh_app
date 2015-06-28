@@ -45,6 +45,11 @@
             <h2 class="title">Barcode Reader</h2>
         </div>
         <ion-content class="has-subheader aligner">
+            <div class="row">
+                <div class="col">
+                    Barcode is: {{barcodeText}}
+                </div>
+            </div>
         </ion-content>
         <div class="bar bar-footer aligner">
             <button class="button button-large" ng-click="scanBarcode()">Scan</button>

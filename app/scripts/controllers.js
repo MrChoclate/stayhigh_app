@@ -5,12 +5,14 @@ var app = angular.module('Controllers', ['ngCordova']);
 app.controller('BarcodeCtrl', ['$scope', '$cordovaBarcodeScanner',
     function ($scope, $cordovaBarcodeScanner) {
 
+        $scope.barcodeText = 'No barcode';
+
         $scope.scanBarcode = function () {
             if (typeof cordova !== 'undefined') {
                 $cordovaBarcodeScanner.scan().then(function (imageData) {
-                    console.log(imageData.text);
-                    console.log('Barcode Format -> ' + imageData.format);
-                    console.log('Cancelled -> ' + imageData.cancelled);
+                    if (!imageData.cancelled) {
+                        $scope.barcodeText = imageData.text;
+                    }
                 }, function (error) {
                     console.log('An error happened -> ' + error);
                 });

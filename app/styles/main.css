@@ -1,1 +1,14 @@
 /* Your application styles go here */
+
+.text-big {
+  font-size: 32px;
+  padding: 8px;
+}
+
+.valid {
+  color: green;
+}
+
+.error {
+  color: red;
+}

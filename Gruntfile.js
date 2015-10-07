@@ -41,10 +41,9 @@ module.exports = function (grunt) {
       },
       development: {
         constants: {
-          ENV: {
-            name: 'development',
-            apiEndpoint: 'http://dev.yoursite.com:10000/'
-          }
+          EMAIL: 'choclatefr@gmail.com',
+          PASSWORD: 'password',
+          FIREBASE_URL: 'https://blinding-inferno-478.firebaseio.com'
         }
       },
       production: {
@@ -157,7 +156,7 @@ module.exports = function (grunt) {
       }
     },
 
-    
+
 
     // Reads HTML for usemin blocks to enable smart builds that automatically
     // concat, minify and revision files. Creates configurations in memory so
@@ -513,7 +512,7 @@ module.exports = function (grunt) {
     'htmlmin'
   ]);
 
-  grunt.registerTask('coverage', 
+  grunt.registerTask('coverage',
     ['karma:continuous',
     'connect:coverage:keepalive'
   ]);
